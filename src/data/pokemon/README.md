@@ -1,4 +1,4 @@
-![Encabezado](./Imagenes/encabezado.png)
+![](./Imagenes/encabezado.png)
 
 # Bienvenidx al repositorio oficial de Data Lovers - Pokemon
 ___
