@@ -4,7 +4,7 @@ import data from './data/pokemon/pokemon.js';
 let mostrarPokemones = document.getElementById('mostrarPokemon');
 mostrarPokemones.innerHTML = data.pokemon.map(verPokemon).join(" ");
 
-//1. Botón Buscar (pasar a Data.js)
+//1. Botón Buscar
 const btnBuscar = document.querySelector('.buscar');
 btnBuscar.addEventListener('keyup', () => {
   const buscador = data.pokemon.filter((item) => {
@@ -28,7 +28,7 @@ select2.addEventListener('change', function () {
 //4.2 Botón para ordenar de la A-Z y Z-A
 let select3 = document.getElementById('sel3');
 select3.addEventListener('change', function (evento) {
-  const selValue = evento.target.value;
+  const selValue = evento.target.value; // repasarlo
   let ordenar = [];
   if (selValue === 'deLaA-Z') {
     ordenar = ordenarAz(data.pokemon);

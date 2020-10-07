@@ -3,24 +3,24 @@ import { filtrarRegion, filtrarTipos, ordenarAz, ordenarZa, ordenarPoder } from 
 // 2.1 Test para Botón Región:
 
 const elegirRegion = [
-  { "name": "raichu", "generation": "kanto" },
-  { "name": "chikorita", "generation": "johto" }, 
-  { "name": "sandshrew", "generation": "kanto" },
-  { "name": "totodile", "generation": "johto" },
-  { "name": "nidorina", "generation": "kanto" },
-  { "name": "sentret", "generation": "johto" }
+  { "name": "raichu", "generation": { "name": "kanto" } },
+  { "name": "chikorita", "generation": { "name": "johto" } },
+  { "name": "sandshrew", "generation": { "name": "kanto" } },
+  { "name": "totodile", "generation": { "name": "johto" } },
+  { "name": "nidorina", "generation": { "name": "kanto" } },
+  { "name": "sentret", "generation": { "name": "johto" } }
 ]
 
 const filtrarJohto = [
-  { "name": "chikorita", "generation": "johto" }, 
-  { "name": "totodile", "generation": "johto" },
-  { "name": "sentret", "generation": "johto" }
+  { "name": "chikorita", "generation": { "name": "johto" } },
+  { "name": "totodile", "generation": { "name": "johto" } },
+  { "name": "sentret", "generation": { "name": "johto" } }
 ]
 
 const filtrarKanto = [
-  { "name": "raichu", "generation": "kanto" },
-  { "name": "sandshrew", "generation": "kanto" },
-  { "name": "nidorina", "generation": "kanto" },
+  { "name": "raichu", "generation": { "name": "kanto" } },
+  { "name": "sandshrew", "generation": { "name": "kanto" } },
+  { "name": "nidorina", "generation": { "name": "kanto" } }
 ]
 
 describe('filtrarRegion', () => {
@@ -29,46 +29,60 @@ describe('filtrarRegion', () => {
   });
 
   it('selecciona los pokemon de la región Johto', () => {
-    expect(filtrarRegion(elegirRegion, 'Johto')).toEqual(filtrarJohto);
+    expect(filtrarRegion(elegirRegion, 'johto')).toEqual(filtrarJohto);
   });
 
   it('selecciona los pokemon de la región Kanto', () => {
-    expect(filtrarRegion(elegirRegion, 'Kanto')).toEqual(filtrarKanto);
+    expect(filtrarRegion(elegirRegion, 'kanto')).toEqual(filtrarKanto);
   });
 });
 
 // 3.1 Test para Botón Tipos Elementales:
 
 const elegirTipo = [
-  { "name": "bulbasaur", "type": "grass" },
-  { "name": "piloswine", "type": "ice" },
-  { "name": "squirtle", "type": "water" },
-  { "name": "dragonite", "type": "dragon" },
-  { "name": "dragonair", "type": "dragon" },
-  { "name": "articuno", "type": "ice" }
+  { "name": "caterpie", "type": ["bug"] },
+  { "name": "dragonite", "type": ["dragon", "flying"] },
+  { "name": "entei", "type": ["fire"] },
+  { "name": "parasect", "type": ["bug", "grass"] },
+  { "name": "kingdra", "type": ["water", "dragon"] },
+  { "name": "charizard", "type": ["fire", "flying"] },
+  { "name": "pinsir", "type": ["bug"] },
+  { "name": "dratini", "type": ["dragon"] },
+  { "name": "charmander", "type": ["fire"] }
+]
+
+const filtrarBug = [
+  { "name": "caterpie", "type": ["bug"] },
+  { "name": "parasect", "type": ["bug", "grass",] },
+  { "name": "pinsir", "type": ["bug"] }
 ]
 
 const filtrarDragon = [
-  { "name": "dragonite", "type": "dragon" },
-  { "name": "dragonair", "type": "dragon" }
+  { "name": "dragonite", "type": ["dragon", "flying"] },
+  { "name": "kingdra", "type": ["water", "dragon"] },
+  { "name": "dratini", "type": ["dragon"] },
 ]
 
-const filtrarIce = [
-  { "name": "piloswine", "type": "ice" },
-  { "name": "articuno", "type": "ice" }
+const filtrarFire = [
+  { "name": "entei", "type": ["fire"] },
+  { "name": "charizard", "type": ["fire", "flying"] },
+  { "name": "charmander", "type": ["fire"] }
 ]
 
 describe('filtrarTipos', () => {
   it('es una función', () => {
     expect(typeof filtrarTipos).toBe('function');
   });
-
-  it('selecciona los pokemon del tipo Dragon', () => {
-    expect(filtrarTipos(elegirTipo, 'Dragon')).toEqual(filtrarDragon);
+  it('selecciona los pokemon del tipo Bug', () => {
+    expect(filtrarTipos(elegirTipo, 'bug')).toEqual(filtrarBug);
   });
-
-  it('selecciona los pokemon del tipo Ice', () => {
-    expect(filtrarTipos(elegirTipo, 'Ice')).toEqual(filtrarIce);
+ 
+  it('selecciona los pokemon del tipo Dragon', () => {
+    expect(filtrarTipos(elegirTipo, 'dragon')).toEqual(filtrarDragon);
+  });
+ 
+  it('selecciona los pokemon del tipo Fire', () => {
+    expect(filtrarTipos(elegirTipo, 'fire')).toEqual(filtrarFire);
   });
 });
 
@@ -113,13 +127,15 @@ describe('ordenarZa', () => {
 
 // 5.1 Test para Botón Cálculo:
 const fuerza = [
-  { "name": "pikachu", "base-attack": "112", "base-defense": "96", "base-stamina": "111" }, 
-  { "name": "raichu", "base-attack": "193", "base-defense": "151", "base-stamina": "155" }, 
-  { "name": "sandshrew", "base-attack": "126", "base-defense": "120", "base-stamina": "137" } 
+  { "name": "pikachu", "stats": { "base-attack": "112", "base-defense": "96", "base-stamina": "111" } },
+  { "name": "raichu", "stats": { "base-attack": "193", "base-defense": "151", "base-stamina": "155" } },
+  { "name": "sandshrew", "stats": { "base-attack": "126", "base-defense": "120", "base-stamina": "137" } }
 ]
 
 const pokemonFuerte = [
-  { "name": "raichu", "base-attack": "193", "base-defense": "151", "base-stamina": "155" }
+  { "name": "raichu", "stats": { "base-attack": "193", "base-defense": "151", "base-stamina": "155" } },
+  { "name": "sandshrew", "stats": { "base-attack": "126", "base-defense": "120", "base-stamina": "137" } },
+  { "name": "pikachu", "stats": { "base-attack": "112", "base-defense": "96", "base-stamina": "111" } }
 ]
 
 describe('ordenarPoder', () => {
@@ -127,7 +143,7 @@ describe('ordenarPoder', () => {
     expect(typeof ordenarPoder).toBe('function');
   });
 
-  it('Mostrar pokemon más fuerte', () => {
+  it('Mostrar el pokemon más fuerte', () => {
     expect(ordenarPoder(fuerza, 'Mas fuerte')).toEqual(pokemonFuerte);
   });
 });
