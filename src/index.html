@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header2">
+    <section class="encabezado">
+      <figure>
+        <img src="Imagenes/Poke.png" class="pokemonGo">
+      </figure>
+      <nav>
+        <input type="search" id="buscar" class="form-control buscar" placeholder="Buscar por Pokemon">
+        <label>
+          <!--Descripción corta del formulario-->
+          <select class="form-control" id="sel1">
+            <!--Formulario: Cajita para seleccionar más de una opción-->
+            <option disabled selected>Región:</option>
+            <option value="johto">Johto</option>
+            <option value="kanto">Kanto</option>
+          </select>
+        </label>
+        <label>
+          <select class="form-control" id="sel2">
+            <option disabled selected>Tipos Elementales:</option>
+            <option value="bug">Bug</option>
+            <!--Bicho-->
+            <option value="dark">Dark</option>
+            <!--Oscuro-->
+            <option value="dragon">Dragon</option>
+            <!--Dragon-->
+            <option value="electric">Electric</option>
+            <!--Eléctrico-->
+            <option value="fairy">Fairy</option>
+            <!--Hada-->
+            <option value="fighting">Fighting</option>
+            <!--Lucha-->
+            <option value="fire">Fire</option>
+            <!--Fuego-->
+            <option value="flying">Flying</option>
+            <!--Volador-->
+            <option value="ghost">Ghost</option>
+            <!--Fantasma-->
+            <option value="grass">Grass</option>
+            <!--Planta-->
+            <option value="ground">Ground</option>
+            <!--Tierra-->
+            <option value="ice">Ice</option>
+            <!--Hielo-->
+            <option value="normal">Normal</option>
+            <!--Normal-->
+            <option value="poison">Poison</option>
+            <!--Veneno-->
+            <option value="psychic">Psychic</option>
+            <!--Psíquico-->
+            <option value="rock">Rock</option>
+            <!--Roca-->
+            <option value="steel">Steel</option>
+            <!--Acero-->
+            <option value="water">Water</option>
+            <!--Agua-->
+          </select>
+        </label>
+        <label>
+          <select class="form-control" id="sel3">
+            <option disabled selected>Ordenar:</option>
+            <option value="deLaA-Z">De la A-Z</option>
+            <option value="deLaZ-A">De la Z-A</option>
+          </select>
+        </label>
+        <button id="sel4">Los más fuertes</button>
+      </nav>
+    </section>
+  </header>
+  <section id="mostrarPokemon"></section>
+
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>

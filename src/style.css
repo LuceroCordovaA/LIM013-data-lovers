@@ -1,0 +1,109 @@
+body{
+    /*background: linear-gradient( #7FFFD4, white); /*linear-gradient: degrada el color*/
+    background: url(./Imagenes/fundo-PGO.jpg);
+}
+
+header {
+    backdrop-filter: blur(15px); /*Difuminar la imagen*/ 
+    width: 110%;
+    overflow: hidden; /*para desplazar sin inpedimento*/
+    margin-top: -1%; 
+    margin-left: -1%;
+}
+
+.encabezado {
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+    font-size:1em;
+    overflow: hidden;
+}
+
+.pokemonGo {
+    width: 170px;
+    float: left;
+    line-height: 200px;
+    padding-right: 20px;
+}
+
+nav {
+    float: rigth;
+    line-height: 200px;
+    font-family: "Trebuchet MS", cursive, Verdana, Arial, Helvetica;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#buscar, #sel1, #sel2, #sel3, #sel4 {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    line-height: normal;
+    font-family: "Trebuchet MS", cursive, Verdana, Arial, Helvetica;
+    font-size:1em;
+    font-weight: bold;
+    border: solid;
+    border-radius: 15%;
+}
+
+.header2 {
+    position: fixed;
+    height: 120px;
+}
+
+.header2 .logo {
+    width: 150px;
+}
+
+.header2 nav {
+    line-height: 100px;
+}
+
+@media screen and (max-width: 950px) {
+    header .pokemonGo, header nav {
+        width: 80%;
+        text-align: center;
+        line-height: 100px;
+    }
+    .header2 {
+        height: auto;
+    }
+    .header2 .pokemonGo, .header2 nav {
+        line-height: 50px;
+    }
+}
+
+#mostrarPokemon {
+    padding-top: 120px;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cardPokemon {
+    text-align: center;
+    background-image: url("./Imagenes/3fondoCardPokemon.jpg");
+    background-size: 102%;
+    border-radius: 25px;
+    width: 210px;
+    height:280px;
+    color: black;
+    font-weight: bold;
+    margin: 20px 20px 20px 20px;
+    align-items: center;
+}
+
+.numero {
+    margin: 30px 20px 0px 0px;
+    text-align: right;
+}
+
+.nombre {
+    margin: 20px 20px 0px 20px;
+    text-transform: uppercase;
+}
+
+.descripcion {
+    margin: 0px 20px 0px;
+}
