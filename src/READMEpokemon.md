@@ -1,4 +1,4 @@
-![](./Imagenes/encabezado.png)
+![](Imagenes/encabezado.png)
 
 # Bienvenidx al repositorio oficial de Data Lovers - Pokemon
 ___
@@ -74,16 +74,20 @@ Criterios de aceptación:
 Pokemon Go al inicio contaba con el siguiente prototipo de baja fidelidad, el cual fue modificado para mejorar la experiencia del usuario, en el transcurso de la creación del proyecto:
 
 :point_right: Pokemon Go modo escritorio
+-
 ![](Imagenes/escritoriobf.PNG)
 
 :point_right: Pokemon Go modo móvil
+-
 ![](Imagenes/movilbf.png)
 
 3. **Prototipo de alta fidelidad:**
 La app web ha sido diseñada para el rápido uso del usuario. En una sola vista podrá: buscar por pokemon, filtrar por región, elegir por tipos elementales, seleccionar el orden alfabético de los nombres de los pokemon y conocer a los 10 pokemon más fuertes. A continuación se muestra el prototipo de la app web y su vista para dispositivos móviles:
 
 :point_right: Pokemon Go modo escritorio
+-
 ![](Imagenes/altaF.png)
 
 :point_right: Pokemon Go modo móvil
+-
 ![](Imagenes/movil.png)
